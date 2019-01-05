@@ -149,7 +149,7 @@ def handle_calculate_IK(req):
             rot0_3 = TF0_3[0:3,0:3]
             rot0_3 = rot0_3.evalf(subs={q1: theta1, q2: theta2, q3: theta3})
 
-            rot3_6 = rot0_3.inv("LU")*ROT_EE
+            rot3_6 = rot0_3.transpose() * ROT_EE
 	    #
 	    #
 	    # Calculate joint angles using Geometric IK method
