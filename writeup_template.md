@@ -147,7 +147,7 @@ Few Problems I faced in implimentation are:
 
 2. The Gripper leave the target quiet frequently. While using the next button, if you overwrite the command, this can skip the pick or release function of the arm. While using the continuue on Rviz,I found out that the sleep time was not enough for the gripper to hold the target, I changed(by the help from Udacity community) the sleep time in src/trajectory_sampler.cpp.(Always run catkin make after you change anything in cpp file).
 
-3. I used rotation error for rotation matrix from joint 3 to joint 6. Which is a error in orientation of gripper as defined in URDF file of gazebo and DH parameters.
+3. The Rotation error in orientation of gripper as defined in URDF file of gazebo and DH parameters. This error should only be multiplied while calculating the rotation matrix of joint 3 to joint6. But doing that doesn't gave the best result everytime. 
 
 4. To reduce the cycle time I did all the calculation for tranforamtion matrices, rotation matrices outside the for loop. 
 And just for fun, another example image:
